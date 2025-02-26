@@ -11,7 +11,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("EmployeeDatabase")));
+builder.Services.AddDbContext<LoginData>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AdminDatabase")));
 
 var app = builder.Build();
 
