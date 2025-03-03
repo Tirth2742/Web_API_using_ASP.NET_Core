@@ -23,6 +23,7 @@ namespace webapi.Entities
         [MaxLength(50)]
         [MinLength(8)]
         public string Password { get; set; }
+
         
     }
 }

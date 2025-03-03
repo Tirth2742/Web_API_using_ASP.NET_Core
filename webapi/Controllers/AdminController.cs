@@ -22,11 +22,11 @@ namespace webapi.Controllers
             var admin = await loginData.admins.ToListAsync();
             return Ok(admin);
         }
-        [HttpGet("{userId}/{pwd}")]
-        public async Task<IActionResult> verif(string userId , string pwd)
+        [HttpGet("{emailId}/{pwd}")]
+        public async Task<IActionResult> verif(string emailId , string pwd)
         {
             
-            var admin = await loginData.admins.FirstOrDefaultAsync(a => a.userID == userId);
+            var admin = await loginData.admins.FirstOrDefaultAsync(a => a.Email == emailId);
             if(admin == null)
             {
                 return NotFound("user not found");
