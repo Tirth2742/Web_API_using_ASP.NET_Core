@@ -94,7 +94,8 @@ namespace webapi.Controllers
 
                 existing_employee.DepartmentID = new_employee.DepartmentID;
             }
- 
+            Console.WriteLine(new_employee);
+            await data.SaveChangesAsync();
             return Ok(await data.Employees.Include(e=>e.Department).FirstOrDefaultAsync(e=>e.EmployeeID==id));
         }
 

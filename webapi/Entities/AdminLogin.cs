@@ -24,6 +24,6 @@ namespace webapi.Entities
         [MinLength(8)]
         public string Password { get; set; }
 
-        
+        public int  isAdmin { get; set; }
     }
 }
