@@ -43,6 +43,9 @@ namespace webapi.Migrations.LoginDataMigrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int>("isAdmin")
+                        .HasColumnType("int");
+
                     b.Property<string>("userID")
                         .IsRequired()
                         .HasMaxLength(50)

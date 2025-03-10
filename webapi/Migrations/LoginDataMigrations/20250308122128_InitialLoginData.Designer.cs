@@ -11,8 +11,8 @@ using webapi.Data;
 namespace webapi.Migrations.LoginDataMigrations
 {
     [DbContext(typeof(LoginData))]
-    [Migration("20250226191555_AdminDatabaseMigration")]
-    partial class AdminDatabaseMigration
+    [Migration("20250308122128_InitialLoginData")]
+    partial class InitialLoginData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,6 +45,9 @@ namespace webapi.Migrations.LoginDataMigrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("isAdmin")
+                        .HasColumnType("int");
 
                     b.Property<string>("userID")
                         .IsRequired()

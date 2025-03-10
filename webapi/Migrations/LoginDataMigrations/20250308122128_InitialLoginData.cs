@@ -5,7 +5,7 @@
 namespace webapi.Migrations.LoginDataMigrations
 {
     /// <inheritdoc />
-    public partial class AdminDatabaseMigration : Migration
+    public partial class InitialLoginData : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,7 +19,8 @@ namespace webapi.Migrations.LoginDataMigrations
                     userID = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    Password = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    isAdmin = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
